@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
   <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   <style>
-    body { 
-      background-color: black; 
-      color: #ffecb3; 
+    body {
+      background-color: black;
+      color: #ffecb3;
       font-family: sans-serif;
       display: flex;
       justify-content: center;
@@ -65,7 +65,7 @@
         <label for="sound-toggle">Sound</label>
       </div>
       <div>
-        <input type="text" id="time-limit" placeholder="Time limit (minutes)">
+        <input type="text" id="time-limit" placeholder="Time limit minutes">
         <label for="time-limit">Minutes (optional)</label>
       </div>
     </div>
@@ -75,16 +75,14 @@
     <button id="start-button">Start</button>
     <button id="reset-button" style="display: none;">Back to Start</button>
   </div>
-
   <py-script src="main.py"></py-script>
-  
   <script>
     // Register service worker for PWA
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js')
           .then(reg => console.log('Service worker registered!', reg))
-          .catch(err => console.log('Service worker registration failed:', err));
+          .catch(err => console.log('Service worker registration failed', err));
       });
     }
   </script>
